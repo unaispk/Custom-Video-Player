@@ -5,6 +5,8 @@ let progressRange = document.querySelector(".progress-range");
 const timeElapsed = document.querySelector('.time-elapsed');
 const timeDuration = document.querySelector('.time-duration');
 
+
+
 let isVideoPlaying = false;
 
 
@@ -67,7 +69,7 @@ function changePlaybackSpeed(speedChange) {
     let newSpeed = currentSpeed + speedChange;
 
     // Ensure the playback rate is within a reasonable range (e.g., between 0.5x and 4x)
-    if (newSpeed >= 0.5 && newSpeed <= 4) {
+    if (newSpeed >= 0.5 && newSpeed <= 2) {
         video.playbackRate = newSpeed;
     }
 }
@@ -78,6 +80,8 @@ document.addEventListener("keydown", (event) => {
     if (event.code === "ArrowUp") {
         event.preventDefault(); // Prevent the default behavior of arrow keys (e.g., scrolling)
         changePlaybackSpeed(0.25); // Increase speed by 0.25x
+
+        
     }
 });
 
@@ -86,6 +90,7 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowDown") {
         event.preventDefault(); // Prevent the default behavior of arrow keys (e.g., scrolling)
         changePlaybackSpeed(-0.25);
+
     }
 });
 
